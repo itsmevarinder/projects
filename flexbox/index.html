@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exported Layout</title>
+		<style>
+			* {
+			    margin: 0;
+			    padding: 0;
+			    box-sizing: border-box;
+			}
+			
+			html,
+			body,
+			.container {
+			   height: 100%;
+			   width: 100%;
+			}
+			
+			body {
+			  display: flex;
+			  padding: 10px;
+			}
+			
+			.item {
+			  height:600px;
+			}
+			
+			.container {
+			  display: flex;
+			  flex-direction: row;
+			  gap: 10px;
+			  flex-wrap: wrap;
+			}
+			
+			.item:nth-child(1),
+			.item:nth-child(5),
+			.item:nth-child(7) {
+			  width: 40%;
+			}
+			
+			.item:nth-child(2),
+			.item:nth-child(8) {
+			  width: 30%;
+			}
+			
+			.item:nth-child(3),
+			.item:nth-child(6),
+			.item:nth-child(9) {
+			  width: 28%;
+			  flex-grow: 1;
+			}
+			
+			.item:nth-child(4) {
+			  width: 25%;
+			}
+
+			.item img{
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				border-radius: 10px;
+				filter: drop-shadow(1px 1px 3px rgb(161, 30, 129));
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item">
+				<img src="img/img.jpg" alt>
+			</div>
+			<div class="item">
+				<img src="img/img-1.webp" alt>
+			</div>
+			<div class="item">
+				<img src="img/img-2.webp" alt>
+			</div>
+			<div class="item">
+				<img src="img/img-3.webp" alt>
+			</div>
+			<div class="item">
+				<img src="img/img-4.jpg" alt>
+			</div>
+			<div class="item">
+				<img src="img/img-5.avif" alt>
+			</div>
+			<div class="item">
+				<img src="img/img-6.webp" alt>
+			</div>
+			<div class="item">
+				<img src="img/img-7.jpg" alt>
+			</div>
+			<div class="item">
+				<img src="img/img-8.webp" alt>
+			</div>
+		</div>
+	</body>
+</html>

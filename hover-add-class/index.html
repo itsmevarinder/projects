@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hover to Show Country Flags</title>
+        <style>
+
+    body { 
+        margin: 0; 
+    }
+
+    .country-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        height: 100vh;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .country-names {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 20%;
+    }
+
+    .country-flags {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    .country-name {
+        font-weight: bold;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .country-flag img {
+        width: 100%;
+        object-fit: cover;
+        opacity: 0; 
+        transition: opacity 0.3s ease; 
+    }
+
+    .show-flag img {
+        opacity: 1; 
+    }
+    </style>
+    </head>
+    <body>
+
+        <div id="countryContainer" class="country-container">
+            <div id="countryNames" class="country-names"></div>
+
+            <div id="countryFlags" class="country-flags">
+                <div class="country-flag show-flag">
+                    <img id="flagImage" src alt="Flag" />
+                </div>
+            </div>
+        </div>
+
+        <script>
+    const countries = [
+        { name: "India", flagUrl: "img/Flag_of_India.svg" },
+        { name: "United States", flagUrl: "img/Flag_of_the_United_States.svg" },
+        { name: "Canada", flagUrl: "img/Flag_of_Canada.svg" },
+        { name: "Germany", flagUrl: "img/Flag_of_Germany.svg" },
+        { name: "Japan", flagUrl: "img/Flag_of_Japan.svg" }
+    ];
+
+    const countryNamesContainer = document.getElementById("countryNames");
+    const flagImage = document.getElementById("flagImage");
+
+    flagImage.src = countries[0].flagUrl;
+
+    let lastHoveredCountry = null;
+
+    function addCountry(name, flagUrl) {
+        const countryNameDiv = document.createElement("div");
+        countryNameDiv.classList.add("country-name");
+        countryNameDiv.textContent = name;
+
+        countryNameDiv.addEventListener("mouseover", () => {
+            flagImage.src = flagUrl;
+            document.querySelector(".country-flag").classList.add("show-flag");
+            lastHoveredCountry = name; 
+        });
+
+        countryNameDiv.addEventListener("mouseout", () => {
+            if (lastHoveredCountry !== name) {
+                document.querySelector(".country-flag").classList.remove("show-flag");
+            }
+        });
+
+        countryNamesContainer.appendChild(countryNameDiv);
+    }
+
+    countries.forEach(country => {
+        addCountry(country.name, country.flagUrl);
+    });
+    </script>
+
+    </body>
+</html>

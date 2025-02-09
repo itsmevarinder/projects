@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>hoverd Layout</title>
+		<style>
+			* {
+			    margin: 0;
+			    padding: 0;
+			    box-sizing: border-box;
+			}
+			
+			html,
+			body,
+			.container {
+			   height: 100%;
+			   width: 100%;
+			}
+			
+			.item-mn {
+			  display: flex;
+			  padding: 10px;
+			  gap: 10px;
+			  height: 100%;
+			}
+			
+			.item {
+			  height:100%;
+			  transition: all .3s ease-in-out;
+			  min-width: 40px;
+			  width: 100%;
+			  position: relative;
+			  overflow: hidden;
+			  border-radius: 10px;
+			}
+
+			.item img{
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				border-radius: 10px;
+				filter: blur(0px);
+			}
+			.item-text{
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: -100%;
+				color: #fff;
+				/* bottom: 20%; */
+				opacity: 0;
+				transition: all .3s ease-in-out;
+				padding: 0 20px;
+				/* transform: scale(0); */
+			}
+
+			.item-text h2{
+				margin: 0 0 20px;
+				font-size: 20px;
+				line-height: 30px;
+			}
+
+			.item-text p{
+				font-size: 14px;
+				line-height: 24px;
+			}
+
+			.item:hover{
+				min-width: calc(100% - 70%);
+				transition: all .3s ease-in-out;
+			}
+			
+			.item:hover img{
+				filter: drop-shadow(1px 1px 3px rgb(161, 30, 129));
+				filter: blur(5px);
+			}
+
+			.item:hover .item-text{
+				opacity: 1;
+				bottom: 20%;
+				/* transform: scale(1); */
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item-mn">
+				<div class="item">
+					<img src="img/img-1.webp" alt>
+					<div class="item-text">
+						<h2>Human Being</h2>
+						<p>Lucy is a special breed of human referred to as "Diclonius," born with a short pair of horns and invisible telekinetic hands that lands her as a victim of inhumane scientific experimentation by the government.</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="img/img-2.webp" alt>
+					<div class="item-text">
+						<h2>Human Being</h2>
+						<p>Lucy is a special breed of human referred to as "Diclonius," born with a short pair of horns and invisible telekinetic hands that lands her as a victim of inhumane scientific experimentation by the government.</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="img/img-3.webp" alt>
+					<div class="item-text">
+						<h2>Human Being</h2>
+						<p>Lucy is a special breed of human referred to as "Diclonius," born with a short pair of horns and invisible telekinetic hands that lands her as a victim of inhumane scientific experimentation by the government.</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="img/img-4.jpg" alt>
+					<div class="item-text">
+						<h2>Human Being</h2>
+						<p>Lucy is a special breed of human referred to as "Diclonius," born with a short pair of horns and invisible telekinetic hands that lands her as a victim of inhumane scientific experimentation by the government.</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="img/img-5.avif" alt>
+					<div class="item-text">
+						<h2>Human Being</h2>
+						<p>Lucy is a special breed of human referred to as "Diclonius," born with a short pair of horns and invisible telekinetic hands that lands her as a victim of inhumane scientific experimentation by the government.</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="img/img-6.webp" alt>
+					<div class="item-text">
+						<h2>Human Being</h2>
+						<p>Lucy is a special breed of human referred to as "Diclonius," born with a short pair of horns and invisible telekinetic hands that lands her as a victim of inhumane scientific experimentation by the government.</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src="img/img-7.jpg" alt>
+					<div class="item-text">
+						<h2>Human Being</h2>
+						<p>Lucy is a special breed of human referred to as "Diclonius," born with a short pair of horns and invisible telekinetic hands that lands her as a victim of inhumane scientific experimentation by the government.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
